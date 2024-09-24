@@ -1,0 +1,6 @@
+live_config_reload = true
+import = ["themes/catppuccin_mocha.toml"]
+
+[font.normal]
+family = "monospace"
+style = "Regular"

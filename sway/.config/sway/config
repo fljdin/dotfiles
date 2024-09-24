@@ -1,0 +1,23 @@
+# Read `man 5 sway` for a complete reference.
+
+### Variables
+#
+# Logo key. Use Mod1 for Alt.
+set $mod Mod4
+
+# Home row direction keys, like vim
+set $left j
+set $down k
+set $up i
+set $right l
+
+# Your preferred terminal emulator
+set $term alacritty
+
+# Your preferred application launcher
+# Note: pass the final command to swaymsg so that the resulting window can be opened
+# on the original workspace that the command was run on.
+set $menu dmenu_path | dmenu | xargs swaymsg exec --
+
+include $HOME/.config/sway/config.d/*
+include /etc/sway/config.d/*

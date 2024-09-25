@@ -18,15 +18,16 @@ stow -t $HOME alacritty
 
 - alacritty
 - brightnessctl
-- j4-dmenu-desktop
+- fonts-firacode
 - kanshi
 - lxappearance
-- notify-send
 - mako-notifier
+- notify-send
 - pcmanfm
 - playerctl
 - sway
-- fonts-firacode
+- swaylock
+- swayimg
 
 ## License
 

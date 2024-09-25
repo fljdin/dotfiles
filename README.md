@@ -9,8 +9,20 @@ Clone the repository and nstall the dotfiles using GNU Stow:
 
 ```bash
 cd dotfiles
+
 stow -t ~ sway
+stow -t ~ alacritty
 ```
+
+## Requirements
+
+- alacritty
+- brightnessctl
+- j4-dmenu-desktop
+- lxappearance
+- pcmanfm
+- playerctl
+- sway
 
 ## License
 

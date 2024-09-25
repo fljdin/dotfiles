@@ -1,0 +1,9 @@
+
+profile default {
+    output "Sharp Corporation 0x1484 0x00000000" enable mode 1920x1080 position 1920,0
+}
+
+profile docked {
+    output "Sharp Corporation 0x1484 0x00000000" enable mode 1920x1080 position 1920,0
+    output "ViewSonic Corporation VX2263 Series U09173661769" enable mode 1920x1080 position 0,0
+}

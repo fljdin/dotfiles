@@ -19,6 +19,7 @@ stow -t ~ alacritty
 - alacritty
 - brightnessctl
 - j4-dmenu-desktop
+- kanshi
 - lxappearance
 - pcmanfm
 - playerctl

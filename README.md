@@ -5,13 +5,13 @@ This repository contains my personal dotfiles. It is managed using
 
 ## Installation
 
-Clone the repository and nstall the dotfiles using GNU Stow:
+Clone the repository and install the dotfiles using GNU Stow:
 
 ```bash
 cd dotfiles
 
-stow -t ~ sway
-stow -t ~ alacritty
+stow -t $HOME sway
+stow -t $HOME alacritty
 ```
 
 ## Requirements
@@ -21,9 +21,12 @@ stow -t ~ alacritty
 - j4-dmenu-desktop
 - kanshi
 - lxappearance
+- notify-send
+- mako-notifier
 - pcmanfm
 - playerctl
 - sway
+- fonts-firacode
 
 ## License
 

@@ -10,11 +10,11 @@ cat $POWER | awk -F= \
     if      ($1 == "POWER_SUPPLY_CAPACITY") { capacity = $2 }
     else if ($1 == "POWER_SUPPLY_STATUS")   { status = $2 }
 } END {
-    if      (status == "Charging") { indicator = "⇡" }
+    if      (status == "Charging") { indicator = " ⇡" }
     else if (status == "Discharging") {
         if      (capacity <= CRITICAL) { option = " foreground=\"red\"" }
         else if (capacity <= WARNING)  { option = " foreground=\"orange\"" }
-        indicator = "⇣"
+        indicator = " ⇣"
     }
-    printf "<span%s>Power %s%% %s</span>\n", option, capacity, indicator
+    printf "<span%s>Power %s%%%s</span>\n", option, capacity, indicator
 }'

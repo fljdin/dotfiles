@@ -24,10 +24,13 @@ stow -t $HOME alacritty
 - mako-notifier
 - notify-send
 - pcmanfm
+- pipewire
 - playerctl
 - sway
-- swaylock
 - swayimg
+- swaylock
+- xdg-desktop-portal
+- xdg-desktop-portal-wlr
 
 ## License
 

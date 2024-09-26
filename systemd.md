@@ -17,4 +17,5 @@ Source: https://wiki.archlinux.org/title/Getty
 ```console
 $ stow -t $HOME sway
 $ systemctl --user enable kanshi.service
+$ systemctl --user enable xdg-desktop-portal.service
 ```

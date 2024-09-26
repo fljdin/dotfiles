@@ -20,6 +20,7 @@ stow -t $HOME alacritty
 - brightnessctl
 - fonts-firacode
 - kanshi
+- libpipewire-0.3-0
 - lxappearance
 - mako-notifier
 - notify-send
@@ -29,6 +30,7 @@ stow -t $HOME alacritty
 - sway
 - swayimg
 - swaylock
+- wireplumber
 - xdg-desktop-portal
 - xdg-desktop-portal-wlr
 

@@ -4,7 +4,9 @@
 # a non-zero return code will stop the execution of the entire script
 
 interval=${1:-5} # seconds
-path=$HOME/.config/sway/scripts
+SWAY=$HOME/.config/sway
+path=$SWAY/scripts
+colors=$SWAY/vars.d/colors.conf
 blocks="memory load battery time"
 
 status() {
@@ -23,5 +25,11 @@ status() {
     done
     echo "$output"
 }
+
+# load colors for any scripts that need them
+eval $(awk \
+    '{printf "export %s=\"%s\"\n", substr($2, 2), $3}' \
+    $colors
+)
 
 while status; do sleep $interval ; done

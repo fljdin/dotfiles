@@ -1,0 +1,6 @@
+Unit]
+Description=Borg backup
+
+[Service]
+Type=oneshot
+ExecStart=%h/.bin/borg-create.sh

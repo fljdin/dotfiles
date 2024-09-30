@@ -14,11 +14,13 @@ stow -t $HOME sway
 stow -t $HOME zsh
 stow -t $HOME vagrant
 stow -t $HOME alacritty
+stow -t $HOME borg
 ```
 
 ## Requirements
 
 - alacritty
+- borgbackup
 - brightnessctl
 - fonts-firacode
 - kanshi
@@ -37,7 +39,8 @@ stow -t $HOME alacritty
 - vagrant
 - wireplumber
 - xdg-desktop-portal
-- xdg-desktop-portal-wlr
+- xdg-desktop-portal-wlrn
+- zenity
 - zsh
 
 ## License

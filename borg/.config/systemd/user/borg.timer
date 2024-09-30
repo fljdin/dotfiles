@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily Borg backup
+Documentation=man:borg
+
+[Timer]
+OnBootSec=30min
+OnUnitActiveSec=1d
+
+[Install]
+WantedBy=timers.target

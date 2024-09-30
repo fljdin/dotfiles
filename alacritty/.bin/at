@@ -1,0 +1,16 @@
+#! /usr/bin/env bash
+# Alacritty Theme Switch
+#
+set -e
+
+CONFIG=$HOME/.config/alacritty/alacritty.toml
+SED="sed --in-place --follow-symlinks"
+
+dark=catppuccin_mocha.toml
+light=catppuccin_latte.toml
+
+if [[ $(grep -c $dark $CONFIG) -gt 0 ]]; then
+    $SED "s/$dark/$light/g" $CONFIG
+else
+    $SED "s/$light/$dark/g" $CONFIG
+fi

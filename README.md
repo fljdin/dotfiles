@@ -11,6 +11,8 @@ Clone the repository and install the dotfiles using GNU Stow:
 cd dotfiles
 
 stow -t $HOME sway
+stow -t $HOME zsh
+stow -t $HOME vagrant
 stow -t $HOME alacritty
 ```
 
@@ -21,18 +23,22 @@ stow -t $HOME alacritty
 - fonts-firacode
 - kanshi
 - libpipewire-0.3-0
+- libvirt
 - lxappearance
 - mako-notifier
 - notify-send
+- oh-my-zsh
 - pcmanfm
 - pipewire
 - playerctl
 - sway
 - swayimg
 - swaylock
+- vagrant
 - wireplumber
 - xdg-desktop-portal
 - xdg-desktop-portal-wlr
+- zsh
 
 ## License
 

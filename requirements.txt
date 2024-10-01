@@ -10,11 +10,11 @@ mako-notifier
 pcmanfm
 pipewire
 playerctl
+ruby-fog-libvirt
 sway
 swayimg
 swaylock
 vagrant
-vagrant-libvirt
 wireplumber
 xdg-desktop-portal
 xdg-desktop-portal-wlr

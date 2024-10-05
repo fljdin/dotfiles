@@ -12,6 +12,7 @@ pipewire
 playerctl
 ruby-fog-libvirt
 sway
+swayidle
 swayimg
 swaylock
 vagrant

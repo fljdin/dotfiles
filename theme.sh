@@ -6,8 +6,15 @@
 # Usage:
 #   theme.sh <theme-name>
 
-theme=$(echo ${1:-"One Dark"} | sed 's/ /%20/g')
+theme=$(echo ${1:-"Peppermint"} | sed 's/ /%20/g')
 url="https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/themes/$theme.yml"
+
+# exit on non 200 status code
+code=$(curl -s -o /dev/null -I -w "%{http_code}" $url)
+if [ $code -ne 200 ]; then
+    echo "Theme not found: $1"
+    exit 1
+fi
 
 # export color as environment variables
 export ALPHA=80
@@ -61,3 +68,23 @@ set \$bright_cyan_alpha    #${COLOR_15}${ALPHA}
 set \$bright_white         #${COLOR_16}
 set \$bright_white_alpha   #${COLOR_16}${ALPHA}
 EOF
+
+sed -e "s/background=\w\+/background=${BACKGROUND}/" \
+    -e "s/foreground=\w\+/foreground=${FOREGROUND}/" \
+    -e "s/regular0=\w\+/regular0=${COLOR_01}/" \
+    -e "s/regular1=\w\+/regular1=${COLOR_02}/" \
+    -e "s/regular2=\w\+/regular2=${COLOR_03}/" \
+    -e "s/regular3=\w\+/regular3=${COLOR_04}/" \
+    -e "s/regular4=\w\+/regular4=${COLOR_05}/" \
+    -e "s/regular5=\w\+/regular5=${COLOR_06}/" \
+    -e "s/regular6=\w\+/regular6=${COLOR_07}/" \
+    -e "s/regular7=\w\+/regular7=${COLOR_08}/" \
+    -e "s/bright0=\w\+/bright0=${COLOR_09}/" \
+    -e "s/bright1=\w\+/bright1=${COLOR_10}/" \
+    -e "s/bright2=\w\+/bright2=${COLOR_11}/" \
+    -e "s/bright3=\w\+/bright3=${COLOR_12}/" \
+    -e "s/bright4=\w\+/bright4=${COLOR_13}/" \
+    -e "s/bright5=\w\+/bright5=${COLOR_14}/" \
+    -e "s/bright6=\w\+/bright6=${COLOR_15}/" \
+    -e "s/bright7=\w\+/bright7=${COLOR_16}/" \
+    -i foot/.config/foot/foot.ini

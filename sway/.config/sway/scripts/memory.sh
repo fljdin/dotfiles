@@ -2,8 +2,8 @@
 grep -E '^Mem' /proc/meminfo | awk \
     -v WARNING=${1:-75} \
     -v CRITICAL=${2:-95} \
-    -v WARNING_COLOR=${colour_orange:-orange} \
-    -v CRITICAL_COLOR=${colour_red:-red} \
+    -v WARNING_COLOR=${normal_yellow:-orange} \
+    -v CRITICAL_COLOR=${normal_red:-red} \
 '{
     if ($1 ~ /MemTotal:/)     { total = $2 }
     if ($1 ~ /MemAvailable:/) { available = $2 }

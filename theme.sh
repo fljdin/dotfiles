@@ -88,3 +88,8 @@ sed -e "s/background=\w\+/background=${BACKGROUND}/" \
     -e "s/bright6=\w\+/bright6=${COLOR_15}/" \
     -e "s/bright7=\w\+/bright7=${COLOR_16}/" \
     -i foot/.config/foot/foot.ini
+
+# kanshi
+
+
+# swaylock

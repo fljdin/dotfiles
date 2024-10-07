@@ -6,7 +6,7 @@
 # Usage:
 #   theme.sh <theme-name>
 
-theme=$(echo ${1:-"Peppermint"} | sed 's/ /%20/g')
+theme=$(echo ${1:-"Desert"} | sed 's/ /%20/g')
 url="https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/themes/$theme.yml"
 
 # exit on non 200 status code

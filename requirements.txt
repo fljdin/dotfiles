@@ -1,4 +1,5 @@
 alacritty
+blueman
 borgbackup
 brightnessctl
 fonts-firacode
@@ -7,6 +8,9 @@ libnotify-bin
 libpipewire-0.3-0
 lxappearance
 mako-notifier
+network-manager
+network-manager-openvpn
+pavucontrol
 pcmanfm
 pipewire
 playerctl
@@ -19,5 +23,6 @@ vagrant
 wireplumber
 xdg-desktop-portal
 xdg-desktop-portal-wlr
+xwayland
 zenity
 zsh

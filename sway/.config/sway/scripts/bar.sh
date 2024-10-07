@@ -7,7 +7,7 @@ interval=${1:-5} # seconds
 SWAY=$HOME/.config/sway
 path=$SWAY/scripts
 colors=$SWAY/vars.d/colors.conf
-blocks="memory load battery time network"
+blocks="memory load network battery time"
 
 status() {
     output=""
@@ -27,7 +27,7 @@ status() {
 }
 
 # load colors for any scripts that need them
-eval $(awk \
+eval $(awk NF \
     '{printf "export %s=\"%s\"\n", substr($2, 2), $3}' \
     $colors
 )

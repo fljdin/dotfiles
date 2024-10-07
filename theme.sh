@@ -16,8 +16,6 @@ if [ $code -ne 200 ]; then
     exit 1
 fi
 
-# export color as environment variables
-export ALPHA=80
 eval $(curl -s $url | awk \
 '{
     if ($1 ~ /color_[0-9]+|background|foreground|cursor/) {
@@ -28,11 +26,23 @@ eval $(curl -s $url | awk \
     }
 }')
 
+# export color as environment variables
+export ALPHA=80
+export PRIMARY=${COLOR_12}
+export SECONDARY=${COLOR_04}
+export TERTIARY=${COLOR_01}
+export ACCENT=${COLOR_02}
+
 cat <<EOF > sway/.config/sway/vars.d/colors.conf
+set \$primary              #${PRIMARY}
+set \$secondary            #${SECONDARY}
+set \$tertiary             #${TERTIARY}
+set \$accent               #${ACCENT}
 set \$background           #${BACKGROUND}
 set \$background_alpha     #${BACKGROUND}${ALPHA}
 set \$foreground           #${FOREGROUND}
 set \$foreground_alpha     #${FOREGROUND}${ALPHA}
+
 set \$cursor               #${CURSOR}
 set \$cursor_alpha         #${CURSOR}${ALPHA}
 set \$normal_black         #${COLOR_01}
@@ -89,7 +99,11 @@ sed -e "s/background=\w\+/background=${BACKGROUND}/" \
     -e "s/bright7=\w\+/bright7=${COLOR_16}/" \
     -i foot/.config/foot/foot.ini
 
-# kanshi
-
+# mako
+sed -e "s/background-color=#\w\+/background-color=#${BACKGROUND}/" \
+    -e "s/text-color=#\w\+/text-color=#${FOREGROUND}/" \
+    -e "s/border-color=#\w\+/border-color=#${PRIMARY}/" \
+    -i sway/.config/mako/config
+makoctl reload
 
 # swaylock

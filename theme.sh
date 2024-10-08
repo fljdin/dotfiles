@@ -26,12 +26,14 @@ eval $(curl -s $url | awk \
     }
 }')
 
-# export color as environment variables
+#          black  red    green  yellow blue   magenta cyan   white
+# normal   01     02     03     04     05     06     07     08
+# bright   09     10     11     12     13     14     15     16
 export ALPHA=80
-export PRIMARY=${COLOR_12}
-export SECONDARY=${COLOR_04}
+export PRIMARY=${COLOR_03}
+export SECONDARY=${COLOR_08}
 export TERTIARY=${COLOR_01}
-export ACCENT=${COLOR_02}
+export ACCENT=${COLOR_02}${ALPHA}
 
 cat <<EOF > sway/.config/sway/vars.d/colors.conf
 set \$primary              #${PRIMARY}
@@ -107,3 +109,33 @@ sed -e "s/background-color=#\w\+/background-color=#${BACKGROUND}/" \
 makoctl reload
 
 # swaylock
+sed -e "s/\(color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(bs-hl-color\)=.*/\1=${TERTIARY}/" \
+    -e "s/\(caps-lock-bs-hl-color\)=.*/\1=${TERTIARY}/" \
+    -e "s/\(caps-lock-key-hl-color\)=.*/\1=${SECONDARY}/" \
+    -e "s/\(inside-caps-lock-color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(inside-clear-color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(inside-color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(inside-ver-color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(inside-wrong-color\)=.*/\1=${ACCENT}/" \
+    -e "s/\(key-hl-color\)=.*/\1=${PRIMARY}/" \
+    -e "s/\(layout-bg-color\)=.*/\1=${COLOR_09}/" \
+    -e "s/\(layout-border-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(layout-text-color\)=.*/\1=${FOREGROUND}/" \
+    -e "s/\(line-caps-lock-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(line-clear-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(line-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(line-ver-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(line-wrong-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(ring-caps-lock-color\)=.*/\1=${SECONDARY}/" \
+    -e "s/\(ring-clear-color\)=.*/\1=${SECONDARY}/" \
+    -e "s/\(ring-color\)=.*/\1=${SECONDARY}/" \
+    -e "s/\(ring-ver-color\)=.*/\1=${SECONDARY}/" \
+    -e "s/\(ring-wrong-color\)=.*/\1=${ACCENT}/" \
+    -e "s/\(separator-color\)=.*/\1=${COLOR_01}/" \
+    -e "s/\(text-caps-lock-color\)=.*/\1=${FOREGROUND}/" \
+    -e "s/\(text-clear-color\)=.*/\1=${FOREGROUND}/" \
+    -e "s/\(text-color\)=.*/\1=${FOREGROUND}/" \
+    -e "s/\(text-ver-color\)=.*/\1=${FOREGROUND}/" \
+    -e "s/\(text-wrong-color\)=.*/\1=${FOREGROUND}/" \
+    -i sway/.config/swaylock/config

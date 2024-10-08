@@ -4,7 +4,7 @@ awk -F: \
     -v WARNING_COLOR=${normal_yellow:-orange} \
     -v CRITICAL_COLOR=${normal_red:-red} \
 '{
-    if ($2 == "vpn")              { vpn  = "" }
+    if ($2 == "vpn")              { vpn  = " " }
     if (!mode) {
         if      ($2 ~ /ethernet/) { mode = "⇅" }
         else if ($2 ~ /wireless/) { mode = "" }

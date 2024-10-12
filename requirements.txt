@@ -1,8 +1,10 @@
 alacritty
+bemenu
 blueman
 borgbackup
 brightnessctl
 fonts-firacode
+grimshot
 kanshi
 libnotify-bin
 libpipewire-0.3-0
@@ -21,6 +23,7 @@ swayimg
 swaylock
 vagrant
 wireplumber
+wob
 xdg-desktop-portal
 xdg-desktop-portal-wlr
 xwayland

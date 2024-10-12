@@ -139,3 +139,12 @@ sed -e "s/\(color\)=.*/\1=${BACKGROUND}/" \
     -e "s/\(text-ver-color\)=.*/\1=${FOREGROUND}/" \
     -e "s/\(text-wrong-color\)=.*/\1=${FOREGROUND}/" \
     -i sway/.config/swaylock/config
+
+# wob (wayland overlay bar)
+sed -e "s/\(background_color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(bar_color\)=.*/\1=${PRIMARY}/" \
+    -e "s/\(border_color\)=.*/\1=${PRIMARY}/" \
+    -e "s/\(overflow_background_color\)=.*/\1=${BACKGROUND}/" \
+    -e "s/\(overflow_bar_color\)=.*/\1=${ACCENT}/" \
+    -e "s/\(overflow_border_color\)=.*/\1=${FOREGROUND}/" \
+    -i sway/.config/wob/wob.ini

@@ -7,7 +7,7 @@ interval=${1:-5} # seconds
 SWAY=$HOME/.config/sway
 path=$SWAY/scripts/bar
 colors=$SWAY/vars.d/colors.conf
-blocks="memory load network battery time"
+blocks="memory load layout network battery time"
 
 status() {
     output=""

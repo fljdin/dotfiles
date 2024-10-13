@@ -3,6 +3,7 @@ bemenu
 blueman
 borgbackup
 brightnessctl
+fish
 fonts-firacode
 grimshot
 kanshi

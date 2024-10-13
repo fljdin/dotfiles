@@ -15,9 +15,16 @@ $ sudo apt install $(cat requirements.txt)
 
 Clone the repository and install the dotfiles using GNU Stow:
 
-```bash
-cd dotfiles
-stow -t $HOME */
+```console
+$ cd dotfiles
+$ stow -t $HOME */
+```
+
+Change the user shell and restart
+
+```console
+$ chsh
+/usr/bin/fish
 ```
 
 ## License

@@ -8,8 +8,8 @@ fish_add_path $GOPATH/bin
 
 # pgenv
 set -x PGENV_ROOT "/var/lib/pgenv"
-set -x LD_LIBRARY_PATH "$PGENV_ROOT/pgsql/lib" $LD_LIBRARY_PATH
-fish_add_path $PGENV_ROOT/bin
+set -x LD_LIBRARY_PATH "$PGENV_ROOT/pgsql/lib"
+fish_add_path $HOME/.pgenv/bin
 fish_add_path $PGENV_ROOT/pgsql/bin
 
 # oracle instanclient

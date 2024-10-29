@@ -1,0 +1,30 @@
+# i3blocks config file
+command=$HOME/.config/i3blocks/scripts/$BLOCK_NAME.sh
+separator=true
+separator_block_width=20
+markup=none
+
+[memory]
+label=Mem
+interval=5
+
+[load]
+label=Load
+interval=5
+
+[layout]
+interval=once
+signal=10
+
+[network]
+interval=5
+
+[battery]
+label=Power
+interval=30
+
+[time]
+command=date '+%F %H:%M'
+interval=5
+separator=false
+separator_block_width=10

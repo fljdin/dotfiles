@@ -5,8 +5,9 @@
 #
 # Usage:
 #   theme.sh <theme-name>
+set -euo pipefail
 
-theme=$(echo ${1:-"Desert"} | sed 's/ /%20/g')
+theme=$(echo ${1:-"Catppuccin Macchiato"} | sed 's/ /%20/g')
 url="https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/themes/$theme.yml"
 
 # exit on non 200 status code
@@ -148,3 +149,8 @@ sed -e "s/\(background_color\)=.*/\1=${BACKGROUND}/" \
     -e "s/\(overflow_bar_color\)=.*/\1=${ACCENT}/" \
     -e "s/\(overflow_border_color\)=.*/\1=${FOREGROUND}/" \
     -i sway/.config/wob/wob.ini
+
+# i3blocks
+set -e "s/\(WARNING_COLOR\).*/\1=#${COLOR_04}/" \
+    -e "s/\(CRITICAL_COLOR\).*/\1=#${COLOR_02}/" \
+    -i sway/.config/i3blocks/env

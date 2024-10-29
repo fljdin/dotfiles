@@ -4,6 +4,10 @@ separator=true
 separator_block_width=20
 markup=none
 
+[docker]
+label=Docker
+interval=30
+
 [memory]
 label=Mem
 interval=5

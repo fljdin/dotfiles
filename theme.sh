@@ -160,4 +160,5 @@ sed -e "s/\(background_color\)=.*/\1=${BACKGROUND}/" \
 # i3blocks
 sed -e "s/\(WARNING_COLOR\).*/\1=#${COLOR_04}/" \
     -e "s/\(CRITICAL_COLOR\).*/\1=#${COLOR_02}/" \
+    -e "s/\(PRIMARY_COLOR\).*/\1=#${PRIMARY}/" \
     -i sway/.config/i3blocks/env

@@ -6,17 +6,24 @@
 # Usage:
 #   theme.sh <theme-name>
 set -euo pipefail
+URL="https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/themes"
 
-theme=$(echo ${1:-"Catppuccin Macchiato"} | sed 's/ /%20/g')
-url="https://raw.githubusercontent.com/Gogh-Co/Gogh/refs/heads/master/themes/$theme.yml"
+# use a default theme if none has already been set
+theme="Catppuccin Macchiato"
+test -f theme && theme=$(cat theme)
 
 # exit on non 200 status code
+url="$URL/$(echo ${1:-$theme} | sed 's/ /%20/g').yml"
 code=$(curl -s -o /dev/null -I -w "%{http_code}" $url)
 if [ $code -ne 200 ]; then
     echo "Theme not found: $1"
     exit 1
 fi
 
+# save the theme name for later use
+echo ${1:-$theme} > theme
+
+# load the colors from the theme file and export them as environment variables
 eval $(curl -s $url | awk \
 '{
     if ($1 ~ /color_[0-9]+|background|foreground|cursor/) {
@@ -151,6 +158,6 @@ sed -e "s/\(background_color\)=.*/\1=${BACKGROUND}/" \
     -i sway/.config/wob/wob.ini
 
 # i3blocks
-set -e "s/\(WARNING_COLOR\).*/\1=#${COLOR_04}/" \
+sed -e "s/\(WARNING_COLOR\).*/\1=#${COLOR_04}/" \
     -e "s/\(CRITICAL_COLOR\).*/\1=#${COLOR_02}/" \
     -i sway/.config/i3blocks/env

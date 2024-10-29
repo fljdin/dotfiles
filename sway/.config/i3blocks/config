@@ -8,6 +8,10 @@ markup=none
 label=Docker
 interval=30
 
+[upgrades]
+interval=once
+signal=9
+
 [memory]
 label=Mem
 interval=5

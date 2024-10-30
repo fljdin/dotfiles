@@ -8,5 +8,5 @@ test $upgradable -lt 1 && exit 0
 
 echo " $upgradable"
 echo $upgradable
-echo $PRIMARY_COLOR
+echo
 exit 0

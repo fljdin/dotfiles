@@ -13,5 +13,5 @@ docker stats --no-stream --format "{{.MemPerc}};{{.CPUPerc}}" | awk -F';' '{
     printf "%d (Mem:%.1f%% CPU:%d%%)\n", NR, mem, cpu
     print NR
 }'
-echo $PRIMARY_COLOR
+echo
 exit 0

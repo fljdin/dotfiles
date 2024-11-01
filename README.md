@@ -27,16 +27,6 @@ $ chsh
 /usr/bin/fish
 ```
 
-## Send signal to i3blocks on apt update
-
-```sh
-# /etc/apt/apt.conf.d/80i3blocks
-APT::Update::Post-Invoke { "pkill -RTMIN+9 i3blocks || true"; };
-DPkg::Post-Invoke        { "pkill -RTMIN+9 i3blocks || true"; };
-```
-
-_Source:_ <https://github.com/vivien/i3blocks-contrib/tree/master/apt-upgrades>
-
 ## License
 
 AGPL-3.0

@@ -3,7 +3,6 @@ bemenu
 blueman
 borgbackup
 brightnessctl
-cron-apt
 fish
 fonts-firacode
 grimshot

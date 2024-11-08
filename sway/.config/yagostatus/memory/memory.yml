@@ -1,17 +1,17 @@
 variables:
   label: ""
-  warning: 20
-  critical: 5
+  warning: 75
+  critical: 95
   color_warning: "#F9E2AF"
   color_critical: "#F38BA8"
-  separator: true
   separator_block_width: 20
+  separator: true
 
 widgets:
   - widget: exec
-    interval: 30
+    interval: 5
     retry: 1
-    command: ./battery.sh ${warning} ${critical}
+    command: ./memory.sh ${warning} ${critical}
     env:
       - WIDGET_LABEL=${label}
       - COLOR_WARNING=${color_warning}

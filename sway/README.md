@@ -42,12 +42,16 @@ AccuracySec=1h
 RandomizedDelaySec=30min
 ```
 
-## Send signal to i3blocks on apt update
+## Send signals on apt update
 
 ```sh
 # /etc/apt/apt.conf.d/80i3blocks
 APT::Update::Post-Invoke { "pkill -RTMIN+9 i3blocks || true"; };
 DPkg::Post-Invoke        { "pkill -RTMIN+9 i3blocks || true"; };
+
+# /etc/apt/apt.conf.d/80yagostatus
+APT::Update::Post-Invoke { "pkill -RTMIN+9 yagostatus || true"; };
+DPkg::Post-Invoke        { "pkill -RTMIN+9 yagostatus || true"; };
 ```
 
 _Source:_ <https://github.com/vivien/i3blocks-contrib/tree/master/apt-upgrades>

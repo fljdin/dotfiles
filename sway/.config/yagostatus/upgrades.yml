@@ -1,0 +1,19 @@
+variables:
+  signal: 9
+  separator: true
+  separator_block_width: 20
+
+widgets:
+  - widget: exec
+    interval: 0
+    signal: ${signal}
+    command: |
+      count=$(apt list --upgradable 2>/dev/null | grep -v Listing | wc -l)
+      if [ $count -gt 0 ]; then
+        echo " $count"
+      fi
+    templates: >
+      [{
+        "separator": ${separator},
+        "separator_block_width": ${separator_block_width}
+      }]

@@ -1,0 +1,18 @@
+variables:
+  separator_block_width: 20
+  separator: true
+
+widgets:
+  - widget: exec
+    interval: 10
+    retry: 1
+    command: |
+      count=$(docker ps -q | wc -l)
+      if [ $count -gt 0 ]; then
+        echo "Docker $count"
+      fi
+    templates: >
+      [{
+        "separator": ${separator},
+        "separator_block_width": ${separator_block_width}
+      }]

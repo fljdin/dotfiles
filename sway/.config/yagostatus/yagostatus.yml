@@ -1,0 +1,14 @@
+widgets:
+  - widget: $battery/battery.yml
+    templates: >
+      [{
+          "separator_block_width": 20
+      }]
+
+  - widget: clock
+    format: 2006-01-02 15:04:05 # https://golang.org/pkg/time/#Time.Format
+    templates: >
+      [{
+          "separator": false,
+          "separator_block_width": 10
+      }]

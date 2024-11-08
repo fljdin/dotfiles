@@ -1,0 +1,13 @@
+variables:
+  warning: 20
+  critical: 5
+  color_warning: "#F9E2AF"
+  color_critical: "#F38BA8"
+
+widgets:
+  - widget: exec
+    command: ./battery.sh ${warning} ${critical}
+    env:
+      - COLOR_WARNING=${color_warning}
+      - COLOR_CRITICAL=${color_critical}
+    interval: 30

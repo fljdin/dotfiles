@@ -51,3 +51,9 @@ DPkg::Post-Invoke        { "pkill -RTMIN+9 i3blocks || true"; };
 ```
 
 _Source:_ <https://github.com/vivien/i3blocks-contrib/tree/master/apt-upgrades>
+
+# Install yagostatus
+
+```console
+go install github.com/burik666/yagostatus@master
+```

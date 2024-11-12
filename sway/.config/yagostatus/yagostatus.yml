@@ -10,6 +10,9 @@ widgets:
   - widget: $load/load.yml
     label: "Load"
 
+  - widget: $layout/layout.yml
+    signal: 10
+
   - widget: $network/network.yml
 
   - widget: $battery/battery.yml

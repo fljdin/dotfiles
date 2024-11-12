@@ -1,0 +1,15 @@
+variables:
+  signal: 10
+  separator: true
+  separator_block_width: 20
+
+widgets:
+  - widget: exec
+    interval: 0
+    signal: ${signal}
+    command: ./layout.sh
+    templates: >
+      [{
+        "separator": ${separator},
+        "separator_block_width": ${separator_block_width}
+      }]

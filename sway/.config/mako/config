@@ -1,8 +1,8 @@
 anchor=bottom-right
 default-timeout=5000
-background-color=#1E1E2E
-text-color=#CDD6F4
-border-color=#A6E3A1
+background-color=#262626
+text-color=#BCBCBC
+border-color=#5F8787
 
 [mode=do-not-disturb]
 invisible=1

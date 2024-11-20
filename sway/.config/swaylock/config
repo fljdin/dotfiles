@@ -4,36 +4,36 @@ indicator-idle-visible
 indicator-thickness=20
 tiling
 
-color=1E1E2E
-bs-hl-color=45475A
-key-hl-color=A6E3A1
-caps-lock-bs-hl-color=45475A
-caps-lock-key-hl-color=A6E3A1
-separator-color=45475A
-layout-bg-color=585B70
-layout-border-color=45475A
-layout-text-color=CDD6F4
+color=262626
+bs-hl-color=1C1C1C
+key-hl-color=5F8787
+caps-lock-bs-hl-color=1C1C1C
+caps-lock-key-hl-color=5F8787
+separator-color=1C1C1C
+layout-bg-color=444444
+layout-border-color=1C1C1C
+layout-text-color=BCBCBC
 
-inside-color=1E1E2E
-inside-clear-color=1E1E2E
-inside-caps-lock-color=1E1E2E
-inside-ver-color=1E1E2E
-inside-wrong-color=F38BA880
+inside-color=262626
+inside-clear-color=262626
+inside-caps-lock-color=262626
+inside-ver-color=262626
+inside-wrong-color=AF5F5F
 
-line-color=45475A
-line-clear-color=45475A
-line-caps-lock-color=45475A
-line-ver-color=45475A
-line-wrong-color=45475A
+line-color=1C1C1C
+line-clear-color=1C1C1C
+line-caps-lock-color=1C1C1C
+line-ver-color=1C1C1C
+line-wrong-color=1C1C1C
 
-ring-color=BAC2DE
-ring-clear-color=BAC2DE
-ring-caps-lock-color=BAC2DE
-ring-ver-color=BAC2DE
-ring-wrong-color=F38BA880
+ring-color=6C6C6C
+ring-clear-color=6C6C6C
+ring-caps-lock-color=6C6C6C
+ring-ver-color=6C6C6C
+ring-wrong-color=AF5F5F
 
-text-color=CDD6F4
-text-clear-color=CDD6F4
-text-caps-lock-color=CDD6F4
-text-ver-color=CDD6F4
-text-wrong-color=CDD6F4
+text-color=BCBCBC
+text-clear-color=BCBCBC
+text-caps-lock-color=BCBCBC
+text-ver-color=BCBCBC
+text-wrong-color=BCBCBC

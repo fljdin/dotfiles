@@ -11,6 +11,8 @@ widgets:
       count=$(apt list --upgradable 2>/dev/null | grep -v Listing | wc -l)
       if [ $count -gt 0 ]; then
         echo " $count"
+      else
+        echo
       fi
     templates: >
       [{

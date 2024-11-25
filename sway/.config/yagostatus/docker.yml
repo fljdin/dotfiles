@@ -10,6 +10,8 @@ widgets:
       count=$(docker ps -q | wc -l)
       if [ $count -gt 0 ]; then
         echo "Docker $count"
+      else
+        echo
       fi
     templates: >
       [{

@@ -4,43 +4,28 @@
 # variables
 PROG=$(basename "$0")
 EXCLUDE=$HOME/.config/borg/exclude.list
-UUID="ef6f29f8-e6ff-44cf-ae9a-10ea7b9a9e23"
 
 # helpers
 info() { notify-send -a "$PROG" "$*"; }
 trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 
-disk_mount() {
-    if [ -n DISPLAY -a $(which zenity) ]; then
-        passphrase=$(zenity --password --title="$PROG Unlock device")
-    else
-        read -s -p "Enter passphrase: " passphrase
-    fi
-
-    udisksctl unlock \
-        --key-file=<(echo -n "$passphrase") \
-        --block-device=/dev/disk/by-uuid/$UUID && \
-    udisksctl mount \
-        --block-device=/dev/mapper/luks-$UUID
-}
-
-disk_unmount() {
-    udisksctl unmount \
-        --block-device=/dev/mapper/luks-$UUID && \
-    udisksctl lock \
-        --block-device=/dev/disk/by-uuid/$UUID
-}
-
 # main
 info "Starting backup"
 
-disk_mount
 export BORG_REPO=$(ls -d1 /media/$USER/*/borg-backup 2> /dev/null | head)
 
 if [ ! -d "$BORG_REPO" ] ; then
     info "Borg repository is unavailable"
     exit 2
 fi
+
+if [ -n DISPLAY -a $(which zenity) ]; then
+    BORG_PASSPHRASE=$(zenity --password --title="$PROG Unlock device")
+else
+    read -s -p "Enter passphrase: " BORG_PASSPHRASE
+fi
+
+export BORG_PASSPHRASE
 
 borg create \
     --stats --show-rc \
@@ -66,7 +51,5 @@ elif [ ${global_exit} -eq 1 ]; then
 else
     info "Backup and/or Prune finished with errors"
 fi
-
-disk_unmount
 
 exit ${global_exit}

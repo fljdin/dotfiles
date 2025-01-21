@@ -4,6 +4,7 @@
 # variables
 PROG=$(basename "$0")
 EXCLUDE=$HOME/.config/borg/exclude.list
+UUID="EE09-8254"
 
 # helpers
 info() { notify-send -a "$PROG" "$*"; }
@@ -12,6 +13,7 @@ trap 'echo $( date ) Backup interrupted >&2; exit 2' INT TERM
 # main
 info "Starting backup"
 
+udisksctl mount --block-device=/dev/disk/by-uuid/$UUID
 export BORG_REPO=$(ls -d1 /media/$USER/*/borg-backup 2> /dev/null | head)
 
 if [ ! -d "$BORG_REPO" ] ; then
@@ -20,7 +22,7 @@ if [ ! -d "$BORG_REPO" ] ; then
 fi
 
 if [ -n DISPLAY -a $(which zenity) ]; then
-    BORG_PASSPHRASE=$(zenity --password --title="$PROG Unlock device")
+    BORG_PASSPHRASE=$(zenity --password --title="$PROG Unlock repository")
 else
     read -s -p "Enter passphrase: " BORG_PASSPHRASE
 fi
@@ -52,4 +54,5 @@ else
     info "Backup and/or Prune finished with errors"
 fi
 
+udisksctl unmount --block-device=/dev/disk/by-uuid/$UUID
 exit ${global_exit}

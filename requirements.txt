@@ -4,7 +4,9 @@ blueman
 borgbackup
 brightnessctl
 fish
+font-firacode
 fonts-firacode
+fonts-font-awesome
 grimshot
 kanshi
 libnotify-bin

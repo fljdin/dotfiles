@@ -19,7 +19,7 @@ pavucontrol
 pcmanfm
 pipewire
 playerctl
-ruby-fog-libvirt
+ruby-libvirt
 sway
 swayidle
 swayimg

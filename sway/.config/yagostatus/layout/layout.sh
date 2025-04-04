@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-KEYBOARD="Intel HID 5 button array"
+KEYBOARD="1:1:AT_Translated_Set_2_keyboard"
 layout=$(
   swaymsg -r -t get_inputs |
-    jq -r ".[] | select(.name == \"$KEYBOARD\") | .xkb_active_layout_name"
+    jq -r ".[] | select(.identifier == \"$KEYBOARD\") | .xkb_active_layout_name"
 )
 
 case $layout in
@@ -12,6 +12,6 @@ case $layout in
         echo "fr" ;;
     "French (BEPO)")
         echo "fr-bépo" ;;
-    "French (Ergo-L)") 
+    "French (Ergo-L)" | "French (Ergo‑L, ISO variant)")
         echo "fr-ergol" ;;
 esac

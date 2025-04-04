@@ -1,0 +1,13 @@
+[Unit]
+Description=Open VPN connection with nmcli
+PartOf=graphical-session.target
+After=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/nmcli connection up florent passwd-file %h/.openvpn
+Restart=on-failure
+
+[Install]
+WantedBy=sway-session.target

@@ -16,3 +16,5 @@ else
 fi
 
 eval "$(direnv hook zsh)"
+
+if [ -e /home/florent/.nix-profile/etc/profile.d/nix.sh ]; then . /home/florent/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

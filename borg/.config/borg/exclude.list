@@ -1,5 +1,6 @@
 /home/**/.git
 /home/**/.vagrant
+/home/*/.nix-*
 /home/*/.vagrant.d/boxes
 /home/*/.dalibo
 /home/*/.ansible

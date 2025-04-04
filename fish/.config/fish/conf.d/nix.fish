@@ -1,0 +1,4 @@
+# added by Nix installer
+if test -e $HOME/.nix-profile/etc/profile.d/nix.fish
+  . $HOME/.nix-profile/etc/profile.d/nix.fish
+end

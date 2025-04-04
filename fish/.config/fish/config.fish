@@ -8,3 +8,7 @@ if status is-login
         exec dbus-run-session sway
     end
 end
+
+# bun
+set --export BUN_INSTALL "$HOME/.bun"
+set --export PATH $BUN_INSTALL/bin $PATH

@@ -6,9 +6,9 @@ tiling
 
 color=262626
 bs-hl-color=1C1C1C
-key-hl-color=5F8787
+key-hl-color=FFFFAF
 caps-lock-bs-hl-color=1C1C1C
-caps-lock-key-hl-color=5F8787
+caps-lock-key-hl-color=FFFFAF
 separator-color=1C1C1C
 layout-bg-color=444444
 layout-border-color=1C1C1C
@@ -26,10 +26,10 @@ line-caps-lock-color=1C1C1C
 line-ver-color=1C1C1C
 line-wrong-color=1C1C1C
 
-ring-color=6C6C6C
-ring-clear-color=6C6C6C
-ring-caps-lock-color=6C6C6C
-ring-ver-color=6C6C6C
+ring-color=87875F
+ring-clear-color=87875F
+ring-caps-lock-color=87875F
+ring-ver-color=87875F
 ring-wrong-color=AF5F5F
 
 text-color=BCBCBC

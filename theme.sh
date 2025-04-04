@@ -38,8 +38,8 @@ eval $(curl -s $url | awk \
 # normal   01     02     03     04     05     06     07     08
 # bright   09     10     11     12     13     14     15     16
 export ALPHA=90
-export PRIMARY=${COLOR_07}
-export SECONDARY=${COLOR_08}
+export PRIMARY=${COLOR_12}
+export SECONDARY=${COLOR_04}
 export TERTIARY=${COLOR_01}
 export ACCENT=${COLOR_02}
 
